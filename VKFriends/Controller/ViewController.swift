@@ -10,11 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    private var authManager: AuthorizationManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        authManager = AppDelegate.shared().authManager
     }
-
-
+    
+    @IBAction func buttonAction(_ sender: UIButton) {
+        
+        authManager?.session()
+    }
 }
 
