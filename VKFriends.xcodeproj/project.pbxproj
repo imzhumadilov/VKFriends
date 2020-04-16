@@ -17,6 +17,7 @@
 		285429A6243A0EEC0040F67C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 285429A5243A0EEC0040F67C /* Assets.xcassets */; };
 		285429A9243A0EEC0040F67C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 285429A7243A0EEC0040F67C /* LaunchScreen.storyboard */; };
 		285429B2243A102C0040F67C /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285429B1243A102C0040F67C /* VKSdkFramework.framework */; };
+		2873DBE52448869F0014D72C /* ParseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2873DBE42448869F0014D72C /* ParseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		285429A8243A0EEC0040F67C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		285429AA243A0EEC0040F67C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		285429B1243A102C0040F67C /* VKSdkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VKSdkFramework.framework; path = Carthage/Build/iOS/VKSdkFramework.framework; sourceTree = "<group>"; };
+		2873DBE42448869F0014D72C /* ParseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 			children = (
 				280D0A14243A10B7008CEBEF /* AuthorizationModel.swift */,
 				280D0A16243A10D1008CEBEF /* NetworkModel.swift */,
+				2873DBE42448869F0014D72C /* ParseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				280D0A17243A10D1008CEBEF /* NetworkModel.swift in Sources */,
+				2873DBE52448869F0014D72C /* ParseModel.swift in Sources */,
 				285429A1243A0EEB0040F67C /* ViewController.swift in Sources */,
 				2854299F243A0EEB0040F67C /* AppDelegate.swift in Sources */,
 				280D0A15243A10B7008CEBEF /* AuthorizationModel.swift in Sources */,

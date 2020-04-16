@@ -25,18 +25,13 @@ class FriendsTableViewController: UITableViewController {
         networkManager.request(method: "/method/users.get", set: nil) { (data, error) in
             
             if let error = error {
-                
                 print(error.localizedDescription)
             }
             
-            guard let data = data,
-                let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject],
-                let JSON = json["response"] as? [[String: AnyObject]],
-                JSON.count > 0,
-                let name = JSON[0]["first_name"] as? String,
-                let surname = JSON[0]["last_name"] as? String else { return }
+            guard let decodedData = self.dataDecoding(type: UserData.self, data: data),
+                decodedData.response.count > 0 else { return }
             
-            self.title = name + " " + surname
+            self.title = decodedData.response[0].firstName + " " + decodedData.response[0].lastName
         }
     }
     
@@ -47,22 +42,27 @@ class FriendsTableViewController: UITableViewController {
         networkManager.request(method: "/method/friends.get", set: set) { (data, error) in
             
             if let error = error {
-                
                 print(error.localizedDescription)
             }
             
-            guard let data = data,
-                let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject],
-                let jsonR = json["response"] as? [String: AnyObject],
-                let JSON = jsonR["items"] as? [[String: AnyObject]] else { return }
+            guard let decodedData = self.dataDecoding(type: FriendsData.self, data: data) else { return }
             
-            for i in 0..<JSON.count {
-                guard let name = JSON[i]["first_name"] as? String,
-                    let surname = JSON[i]["last_name"] as? String else { return }
-                self.friends.append(name + " " + surname)
+            for i in 0..<decodedData.response.items.count {
+                
+                let item = decodedData.response.items[i]
+                self.friends.append(item.firstName + " " + item.lastName)
             }
+            
             self.tableView.reloadData()
         }
+    }
+    
+    private func dataDecoding <T: Decodable> (type: T.Type, data: Data?) -> T? {
+        
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        guard let data = data, let decodedData = try? decoder.decode(type, from: data) else { return nil }
+        return decodedData
     }
     
     // MARK: - Table view data source
