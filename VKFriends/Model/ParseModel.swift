@@ -8,19 +8,55 @@
 
 import Foundation
 
-struct UserData: Decodable {
-    let response: [Item]
+struct FriendsData {
+    let friends: Friends
 }
 
-struct FriendsData: Decodable {
-    let response: Items
+struct Friends {
+    let users: [Profile]
 }
 
-struct Items: Decodable {
-    let items: [Item]
+struct FriendsDataResponse: Decodable {
+    let response: FriendResponse?
+    
+    func defaultMapping() -> FriendsData {
+        return FriendsData(friends: response?.defaultMapping() ?? Friends(users: []))
+    }
 }
 
-struct Item: Decodable {
+struct FriendResponse: Decodable {
+    let items: [ProfileResponse?]?
+    
+    func defaultMapping() -> Friends {
+        return Friends(users: items?.compactMap({ $0?.defaultMapping() }) ?? [])
+    }
+}
+
+
+
+struct Users {
+    let profile: [Profile]
+}
+
+struct Profile {
     let firstName: String
     let lastName: String
+}
+
+struct UsersResponse: Decodable {
+    let response: [ProfileResponse?]?
+    
+    func defaultMapping() -> Users {
+        return Users(profile: response?.compactMap({ $0?.defaultMapping() }) ?? [])
+    }
+}
+
+struct ProfileResponse: Decodable {
+    let firstName: String?
+    let lastName: String?
+    
+    func defaultMapping() -> Profile {
+        return Profile(firstName: firstName ?? "",
+                    lastName: lastName ?? "")
+    }
 }

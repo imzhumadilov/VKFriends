@@ -9,8 +9,9 @@
 import Foundation
 import VKSdkFramework
 
-class AuthorizationManager: NSObject {
+class AuthorizationService: NSObject {
     
+    // MARK: - Props
     private let appDelegate = AppDelegate.shared()
     
     var token: String? {
@@ -25,7 +26,8 @@ class AuthorizationManager: NSObject {
         vkSdk?.uiDelegate = self
     }
     
-    func session() {
+    // MARK: - Public functions
+    public func createSession() {
         
         let scope = ["offline", "friends"]
         
@@ -37,7 +39,7 @@ class AuthorizationManager: NSObject {
                 
             } else if authorizationState == VKAuthorizationState.authorized {
                 
-                self.appDelegate.showInfoWindow()
+                self.appDelegate.presentFriendsViewController()
                 
             } else if let error = error {
                 
@@ -47,28 +49,22 @@ class AuthorizationManager: NSObject {
     }
 }
 
-extension AuthorizationManager: VKSdkDelegate, VKSdkUIDelegate {
+// MARK: - VKSdkDelegate, VKSdkUIDelegate
+extension AuthorizationService: VKSdkDelegate, VKSdkUIDelegate {
     
     func vkSdkShouldPresent(_ controller: UIViewController!) {
         
-        appDelegate.showAuthWindow(controller)
+        appDelegate.presentAuthorizationViewController(controller)
     }
     
-    func vkSdkNeedCaptchaEnter(_ captchaError: VKError!) {}
-    
-    
+    func vkSdkNeedCaptchaEnter(_ captchaError: VKError!) { }
     
     func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {
         
         if result.token != nil {
-            
-            appDelegate.showInfoWindow()
-            
-        } else if let error = result.error {
-            
-            print(error.localizedDescription)
+            appDelegate.presentFriendsViewController()
         }
     }
     
-    func vkSdkUserAuthorizationFailed() {}
+    func vkSdkUserAuthorizationFailed() { }
 }

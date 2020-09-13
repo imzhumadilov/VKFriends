@@ -13,15 +13,18 @@ import VKSdkFramework
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var authManager: AuthorizationManager?
+    var authService: AuthorizationService?
     
     static func shared() -> AppDelegate {
-        return UIApplication.shared.delegate as! AppDelegate
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return AppDelegate() }
+        
+        return appDelegate
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        self.authManager = AuthorizationManager()
+        self.authService = AuthorizationService()
         return true
     }
     
@@ -31,14 +34,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func showAuthWindow(_ viewController: UIViewController) {
+    // MARK: - Public functions
+    public func presentAuthorizationViewController(_ viewController: UIViewController) {
         
-        window?.rootViewController?.present(viewController, animated: true, completion: nil)
+        window?.rootViewController?.present(viewController, animated: true)
     }
     
-    func showInfoWindow() {
+    func presentFriendsViewController() {
         
-        let friendsVC = UIStoryboard(name: "Friends", bundle: nil).instantiateInitialViewController() as! FriendsTableViewController
+        guard let friendsVC = UIStoryboard(name: "Friends", bundle: nil).instantiateInitialViewController() as? FriendsViewController else { return }
+        
         let navigationVC = UINavigationController(rootViewController: friendsVC)
         window?.rootViewController = navigationVC
     }

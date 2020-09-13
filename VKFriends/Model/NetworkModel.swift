@@ -8,45 +8,75 @@
 
 import Foundation
 
-class NetworkManager {
+class VKService {
     
-    private let authManager = AppDelegate.shared().authManager!
+    private let authManager = AppDelegate.shared().authService
     
-    func request(method: String, set: [String : String]?, completionHandler: @escaping (Data?, Error?) -> Void) {
+    func getUser(completion: @escaping ((Result<Profile, Error>) -> Void)) {
         
-        guard let token = authManager.token else { return }
+        let params = ["access_token" : (authManager?.token)!,
+                       "v" : "5.103"]
         
-        var fullSet = [String : String]()
+        var url = URLComponents(string: "https://api.vk.com/method/users.get")
         
-        if let set = set {
+        url?.queryItems = params.map ({ URLQueryItem(name: $0.key, value: $0.value) })
+        
+        URLSession.shared.dataTask(with: (url?.url)!) { (data, response, error) in
             
-            fullSet = set
-        }
-        
-        fullSet["access_token"] = token
-        fullSet["v"] = "5.103"
-        
-        let request = URLRequest(url: createURL(method: method, set: fullSet))
-        
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+                return
+            }
+            
+            guard let decodedData = self.dataDecoding(type: UsersResponse.self, data: data),
+                let profile = decodedData.defaultMapping().profile.first else { return }
             
             DispatchQueue.main.async {
-                
-                completionHandler(data, error)
+                completion(.success(profile))
             }
         }.resume()
     }
     
     
-    private func createURL(method: String, set: [String: String]) -> URL {
+    
+    func getFriends(count: Int = 5000, order: String = "", fields: [String] = [], completion: @escaping ((Result<[Profile], Error>) -> Void)) {
         
-        var components = URLComponents()
-        components.scheme = "https"
-        components.host = "api.vk.com"
-        components.path = method
-        components.queryItems = set.map{ (key: String, value: String) -> URLQueryItem in
-            return URLQueryItem(name: key, value: value)
-        }
-        return components.url!
+        var params = ["access_token" : (authManager?.token)!,
+                       "v" : "5.103",
+                       "count": String(count)]
+        
+        if !order.isEmpty { params["order"] = order }
+        if !fields.isEmpty { params["fields"] = fields.joined(separator: ",") }
+        
+        var url = URLComponents(string: "https://api.vk.com/method/friends.get")
+        url?.queryItems = params.map({ URLQueryItem(name: $0.key, value: $0.value) })
+        
+        URLSession.shared.dataTask(with: (url?.url)!) { (data, response, error) in
+            
+            if let error = error {
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+                return
+            }
+            
+            guard let decodedData = self.dataDecoding(type: FriendsDataResponse.self, data: data) else { return }
+            
+            let friends = decodedData.defaultMapping().friends.users
+            
+            DispatchQueue.main.async {
+                completion(.success(friends))
+            }
+        }.resume()
+    }
+    
+    private func dataDecoding <T: Decodable> (type: T.Type, data: Data?) -> T? {
+        
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        guard let data = data, let decodedData = try? decoder.decode(type, from: data) else { return nil }
+        return decodedData
     }
 }
