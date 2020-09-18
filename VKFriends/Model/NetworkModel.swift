@@ -11,11 +11,12 @@ import Foundation
 class VKService {
     
     private let authManager = AppDelegate.shared().authService
+    private let version = "5.103"
     
-    func getUser(completion: @escaping ((Result<Profile, Error>) -> Void)) {
+    func getMyProfile(completion: @escaping ((Result<Profile, Error>) -> Void)) {
         
         let params = ["access_token" : (authManager?.token)!,
-                       "v" : "5.103"]
+                       "v" : version]
         
         var url = URLComponents(string: "https://api.vk.com/method/users.get")
         
@@ -44,7 +45,7 @@ class VKService {
     func getFriends(count: Int = 5000, order: String = "", fields: [String] = [], completion: @escaping ((Result<[Profile], Error>) -> Void)) {
         
         var params = ["access_token" : (authManager?.token)!,
-                       "v" : "5.103",
+                       "v" : version,
                        "count": String(count)]
         
         if !order.isEmpty { params["order"] = order }

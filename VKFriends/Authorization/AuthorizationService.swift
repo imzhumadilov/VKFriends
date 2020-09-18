@@ -41,9 +41,6 @@ class AuthorizationService: NSObject {
                 
                 self.appDelegate.presentFriendsViewController()
                 
-            } else if let error = error {
-                
-                print(error.localizedDescription)
             }
         }
     }

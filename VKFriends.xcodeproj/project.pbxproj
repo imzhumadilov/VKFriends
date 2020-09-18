@@ -18,6 +18,8 @@
 		285429A9243A0EEC0040F67C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 285429A7243A0EEC0040F67C /* LaunchScreen.storyboard */; };
 		285429B2243A102C0040F67C /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285429B1243A102C0040F67C /* VKSdkFramework.framework */; };
 		2873DBE52448869F0014D72C /* ParseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2873DBE42448869F0014D72C /* ParseModel.swift */; };
+		28E85E91250E0952003E15AE /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E85E90250E0952003E15AE /* Routing.swift */; };
+		28E85E93250E0EB8003E15AE /* FriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E85E92250E0EB8003E15AE /* FriendsViewModel.swift */; };
 		28ECD82A250A2C6700AD5E08 /* AuthorizationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ECD829250A2C6700AD5E08 /* AuthorizationRouter.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,8 @@
 		285429AA243A0EEC0040F67C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		285429B1243A102C0040F67C /* VKSdkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VKSdkFramework.framework; path = Carthage/Build/iOS/VKSdkFramework.framework; sourceTree = "<group>"; };
 		2873DBE42448869F0014D72C /* ParseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseModel.swift; sourceTree = "<group>"; };
+		28E85E90250E0952003E15AE /* Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
+		28E85E92250E0EB8003E15AE /* FriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewModel.swift; sourceTree = "<group>"; };
 		28ECD829250A2C6700AD5E08 /* AuthorizationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				280D0A16243A10D1008CEBEF /* NetworkModel.swift */,
+				28E85E90250E0952003E15AE /* Routing.swift */,
 				2873DBE42448869F0014D72C /* ParseModel.swift */,
 			);
 			path = Model;
@@ -121,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				280D0A1A243A10F0008CEBEF /* FriendsViewController.swift */,
+				28E85E92250E0EB8003E15AE /* FriendsViewModel.swift */,
 				280D0A18243A10E1008CEBEF /* Friends.storyboard */,
 			);
 			path = FriendsList;
@@ -221,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28E85E91250E0952003E15AE /* Routing.swift in Sources */,
 				280D0A17243A10D1008CEBEF /* NetworkModel.swift in Sources */,
 				28ECD82A250A2C6700AD5E08 /* AuthorizationRouter.swift in Sources */,
 				2873DBE52448869F0014D72C /* ParseModel.swift in Sources */,
@@ -228,6 +235,7 @@
 				2854299F243A0EEB0040F67C /* AppDelegate.swift in Sources */,
 				280D0A15243A10B7008CEBEF /* AuthorizationService.swift in Sources */,
 				280D0A1B243A10F0008CEBEF /* FriendsViewController.swift in Sources */,
+				28E85E93250E0EB8003E15AE /* FriendsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

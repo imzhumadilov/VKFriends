@@ -22,7 +22,7 @@ class FriendsViewController: UITableViewController {
     
     func userData() {
         
-        networkManager.getUser() { (result) in
+        networkManager.getMyProfile() { (result) in
             
             switch result {
             case .success(let profile):
