@@ -30,12 +30,12 @@ class FriendsViewModel {
                         self.loadDataCompletion?(.success((profile, friends)))
                         
                     case .failure(let error):
-                        print(error.localizedDescription)
+                        self.loadDataCompletion?(.failure(error))
                     }
                 }
                 
             case .failure(let error):
-                print(error.localizedDescription)
+                self.loadDataCompletion?(.failure(error))
             }
         }
     }

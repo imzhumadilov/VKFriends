@@ -8,26 +8,40 @@
 
 /* Begin PBXBuildFile section */
 		280D0A15243A10B7008CEBEF /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D0A14243A10B7008CEBEF /* AuthorizationService.swift */; };
-		280D0A17243A10D1008CEBEF /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D0A16243A10D1008CEBEF /* NetworkModel.swift */; };
+		280D0A17243A10D1008CEBEF /* VKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D0A16243A10D1008CEBEF /* VKService.swift */; };
 		280D0A19243A10E1008CEBEF /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 280D0A18243A10E1008CEBEF /* Friends.storyboard */; };
 		280D0A1B243A10F0008CEBEF /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D0A1A243A10F0008CEBEF /* FriendsViewController.swift */; };
+		28113EAA25163CA7000D9290 /* FriendsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28113EA925163CA7000D9290 /* FriendsData.swift */; };
+		28113EAD25163CC9000D9290 /* FriendsDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28113EAC25163CC9000D9290 /* FriendsDataResponse.swift */; };
+		28113EB025163CF5000D9290 /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28113EAF25163CF5000D9290 /* Friends.swift */; };
+		28113EB325163D47000D9290 /* FriendsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28113EB225163D47000D9290 /* FriendsResponse.swift */; };
+		28113EB625163D79000D9290 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28113EB525163D79000D9290 /* Users.swift */; };
+		28113EBA25163DBA000D9290 /* UsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28113EB925163DBA000D9290 /* UsersResponse.swift */; };
+		28113EBC25163DD9000D9290 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28113EBB25163DD9000D9290 /* Profile.swift */; };
+		28113EBF25163E09000D9290 /* ProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28113EBE25163E09000D9290 /* ProfileResponse.swift */; };
 		2854299F243A0EEB0040F67C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2854299E243A0EEB0040F67C /* AppDelegate.swift */; };
 		285429A1243A0EEB0040F67C /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285429A0243A0EEB0040F67C /* AuthorizationViewController.swift */; };
 		285429A4243A0EEB0040F67C /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 285429A2243A0EEB0040F67C /* Authorization.storyboard */; };
 		285429A6243A0EEC0040F67C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 285429A5243A0EEC0040F67C /* Assets.xcassets */; };
 		285429A9243A0EEC0040F67C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 285429A7243A0EEC0040F67C /* LaunchScreen.storyboard */; };
 		285429B2243A102C0040F67C /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285429B1243A102C0040F67C /* VKSdkFramework.framework */; };
-		2873DBE52448869F0014D72C /* ParseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2873DBE42448869F0014D72C /* ParseModel.swift */; };
 		28E85E91250E0952003E15AE /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E85E90250E0952003E15AE /* Routing.swift */; };
 		28E85E93250E0EB8003E15AE /* FriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E85E92250E0EB8003E15AE /* FriendsViewModel.swift */; };
-		28ECD82A250A2C6700AD5E08 /* AuthorizationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ECD829250A2C6700AD5E08 /* AuthorizationRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		280D0A14243A10B7008CEBEF /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
-		280D0A16243A10D1008CEBEF /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
+		280D0A16243A10D1008CEBEF /* VKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKService.swift; sourceTree = "<group>"; };
 		280D0A18243A10E1008CEBEF /* Friends.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
 		280D0A1A243A10F0008CEBEF /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		28113EA925163CA7000D9290 /* FriendsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsData.swift; sourceTree = "<group>"; };
+		28113EAC25163CC9000D9290 /* FriendsDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDataResponse.swift; sourceTree = "<group>"; };
+		28113EAF25163CF5000D9290 /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
+		28113EB225163D47000D9290 /* FriendsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsResponse.swift; sourceTree = "<group>"; };
+		28113EB525163D79000D9290 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		28113EB925163DBA000D9290 /* UsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersResponse.swift; sourceTree = "<group>"; };
+		28113EBB25163DD9000D9290 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		28113EBE25163E09000D9290 /* ProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponse.swift; sourceTree = "<group>"; };
 		2854299B243A0EEB0040F67C /* VKFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2854299E243A0EEB0040F67C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		285429A0243A0EEB0040F67C /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
@@ -36,10 +50,8 @@
 		285429A8243A0EEC0040F67C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		285429AA243A0EEC0040F67C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		285429B1243A102C0040F67C /* VKSdkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VKSdkFramework.framework; path = Carthage/Build/iOS/VKSdkFramework.framework; sourceTree = "<group>"; };
-		2873DBE42448869F0014D72C /* ParseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseModel.swift; sourceTree = "<group>"; };
 		28E85E90250E0952003E15AE /* Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
 		28E85E92250E0EB8003E15AE /* FriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewModel.swift; sourceTree = "<group>"; };
-		28ECD829250A2C6700AD5E08 /* AuthorizationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,25 +66,137 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		280D0A1C243A1247008CEBEF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				280D0A16243A10D1008CEBEF /* NetworkModel.swift */,
-				28E85E90250E0952003E15AE /* Routing.swift */,
-				2873DBE42448869F0014D72C /* ParseModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		280D0A1F243A126F008CEBEF /* Supports */ = {
+		28113EA125163730000D9290 /* Application Layer */ = {
 			isa = PBXGroup;
 			children = (
 				285429AA243A0EEC0040F67C /* Info.plist */,
 				2854299E243A0EEB0040F67C /* AppDelegate.swift */,
-				285429A5243A0EEC0040F67C /* Assets.xcassets */,
 				285429A7243A0EEC0040F67C /* LaunchScreen.storyboard */,
+				28113EA22516374E000D9290 /* Resources */,
 			);
-			path = Supports;
+			path = "Application Layer";
+			sourceTree = "<group>";
+		};
+		28113EA22516374E000D9290 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				285429A5243A0EEC0040F67C /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		28113EA325163769000D9290 /* Data Layer */ = {
+			isa = PBXGroup;
+			children = (
+				28113EA5251637A5000D9290 /* Network */,
+				28113EA425163775000D9290 /* Models */,
+			);
+			path = "Data Layer";
+			sourceTree = "<group>";
+		};
+		28113EA425163775000D9290 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				28113EAE25163CE5000D9290 /* Friends */,
+				28113EA825163C8B000D9290 /* FriendsData */,
+				28113EB725163D97000D9290 /* Profile */,
+				28113EB425163D6F000D9290 /* Users */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		28113EA5251637A5000D9290 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				28E85E90250E0952003E15AE /* Routing.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		28113EA6251637F9000D9290 /* Presentation Layer */ = {
+			isa = PBXGroup;
+			children = (
+				285D988D250A2A5400DE342D /* Authorization */,
+				28ECD828250A2B2100AD5E08 /* FriendsList */,
+			);
+			path = "Presentation Layer";
+			sourceTree = "<group>";
+		};
+		28113EA725163818000D9290 /* Service Layer */ = {
+			isa = PBXGroup;
+			children = (
+				280D0A14243A10B7008CEBEF /* AuthorizationService.swift */,
+				280D0A16243A10D1008CEBEF /* VKService.swift */,
+			);
+			path = "Service Layer";
+			sourceTree = "<group>";
+		};
+		28113EA825163C8B000D9290 /* FriendsData */ = {
+			isa = PBXGroup;
+			children = (
+				28113EA925163CA7000D9290 /* FriendsData.swift */,
+				28113EAB25163CBE000D9290 /* FriendsDataResponse */,
+			);
+			path = FriendsData;
+			sourceTree = "<group>";
+		};
+		28113EAB25163CBE000D9290 /* FriendsDataResponse */ = {
+			isa = PBXGroup;
+			children = (
+				28113EAC25163CC9000D9290 /* FriendsDataResponse.swift */,
+			);
+			path = FriendsDataResponse;
+			sourceTree = "<group>";
+		};
+		28113EAE25163CE5000D9290 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				28113EAF25163CF5000D9290 /* Friends.swift */,
+				28113EB125163D03000D9290 /* FriendsResponse */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		28113EB125163D03000D9290 /* FriendsResponse */ = {
+			isa = PBXGroup;
+			children = (
+				28113EB225163D47000D9290 /* FriendsResponse.swift */,
+			);
+			path = FriendsResponse;
+			sourceTree = "<group>";
+		};
+		28113EB425163D6F000D9290 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				28113EB525163D79000D9290 /* Users.swift */,
+				28113EB825163D9C000D9290 /* UsersResponse */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		28113EB725163D97000D9290 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				28113EBB25163DD9000D9290 /* Profile.swift */,
+				28113EBD25163DF2000D9290 /* ProfileResponse */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		28113EB825163D9C000D9290 /* UsersResponse */ = {
+			isa = PBXGroup;
+			children = (
+				28113EB925163DBA000D9290 /* UsersResponse.swift */,
+			);
+			path = UsersResponse;
+			sourceTree = "<group>";
+		};
+		28113EBD25163DF2000D9290 /* ProfileResponse */ = {
+			isa = PBXGroup;
+			children = (
+				28113EBE25163E09000D9290 /* ProfileResponse.swift */,
+			);
+			path = ProfileResponse;
 			sourceTree = "<group>";
 		};
 		28542992243A0EEB0040F67C = {
@@ -95,10 +219,10 @@
 		2854299D243A0EEB0040F67C /* VKFriends */ = {
 			isa = PBXGroup;
 			children = (
-				28ECD828250A2B2100AD5E08 /* FriendsList */,
-				285D988D250A2A5400DE342D /* Authorization */,
-				280D0A1C243A1247008CEBEF /* Model */,
-				280D0A1F243A126F008CEBEF /* Supports */,
+				28113EA125163730000D9290 /* Application Layer */,
+				28113EA325163769000D9290 /* Data Layer */,
+				28113EA6251637F9000D9290 /* Presentation Layer */,
+				28113EA725163818000D9290 /* Service Layer */,
 			);
 			path = VKFriends;
 			sourceTree = "<group>";
@@ -114,8 +238,6 @@
 		285D988D250A2A5400DE342D /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				280D0A14243A10B7008CEBEF /* AuthorizationService.swift */,
-				28ECD829250A2C6700AD5E08 /* AuthorizationRouter.swift */,
 				285429A0243A0EEB0040F67C /* AuthorizationViewController.swift */,
 				285429A2243A0EEB0040F67C /* Authorization.storyboard */,
 			);
@@ -125,9 +247,9 @@
 		28ECD828250A2B2100AD5E08 /* FriendsList */ = {
 			isa = PBXGroup;
 			children = (
+				280D0A18243A10E1008CEBEF /* Friends.storyboard */,
 				280D0A1A243A10F0008CEBEF /* FriendsViewController.swift */,
 				28E85E92250E0EB8003E15AE /* FriendsViewModel.swift */,
-				280D0A18243A10E1008CEBEF /* Friends.storyboard */,
 			);
 			path = FriendsList;
 			sourceTree = "<group>";
@@ -227,13 +349,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28113EBF25163E09000D9290 /* ProfileResponse.swift in Sources */,
 				28E85E91250E0952003E15AE /* Routing.swift in Sources */,
-				280D0A17243A10D1008CEBEF /* NetworkModel.swift in Sources */,
-				28ECD82A250A2C6700AD5E08 /* AuthorizationRouter.swift in Sources */,
-				2873DBE52448869F0014D72C /* ParseModel.swift in Sources */,
+				28113EBC25163DD9000D9290 /* Profile.swift in Sources */,
+				280D0A17243A10D1008CEBEF /* VKService.swift in Sources */,
+				28113EAD25163CC9000D9290 /* FriendsDataResponse.swift in Sources */,
+				28113EB025163CF5000D9290 /* Friends.swift in Sources */,
+				28113EBA25163DBA000D9290 /* UsersResponse.swift in Sources */,
 				285429A1243A0EEB0040F67C /* AuthorizationViewController.swift in Sources */,
+				28113EB325163D47000D9290 /* FriendsResponse.swift in Sources */,
 				2854299F243A0EEB0040F67C /* AppDelegate.swift in Sources */,
 				280D0A15243A10B7008CEBEF /* AuthorizationService.swift in Sources */,
+				28113EB625163D79000D9290 /* Users.swift in Sources */,
+				28113EAA25163CA7000D9290 /* FriendsData.swift in Sources */,
 				280D0A1B243A10F0008CEBEF /* FriendsViewController.swift in Sources */,
 				28E85E93250E0EB8003E15AE /* FriendsViewModel.swift in Sources */,
 			);
@@ -386,7 +514,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/VKFriends/Supports/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/VKFriends/Application Layer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -408,7 +536,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/VKFriends/Supports/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/VKFriends/Application Layer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

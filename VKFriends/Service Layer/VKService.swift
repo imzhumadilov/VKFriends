@@ -1,5 +1,5 @@
 //
-//  NetworkModel.swift
+//  VKService.swift
 //  VKFriends
 //
 //  Created by Ilyas Zhumadilov on 05.04.2020.
@@ -10,19 +10,23 @@ import Foundation
 
 class VKService {
     
+    // MARK: - Props
     private let authManager = AppDelegate.shared().authService
     private let version = "5.103"
     
-    func getMyProfile(completion: @escaping ((Result<Profile, Error>) -> Void)) {
+    // MARK: - Public functions
+    public func getMyProfile(completion: @escaping ((Result<Profile, Error>) -> Void)) {
         
-        let params = ["access_token" : (authManager?.token)!,
-                       "v" : version]
+        var params = ["v" : version]
         
-        var url = URLComponents(string: "https://api.vk.com/method/users.get")
+        if let token = authManager?.token { params["access_token"] = token }
         
+        var url = URLComponents(string: Routing.Vk.users)
         url?.queryItems = params.map ({ URLQueryItem(name: $0.key, value: $0.value) })
         
-        URLSession.shared.dataTask(with: (url?.url)!) { (data, response, error) in
+        guard let URL = url?.url else { return }
+        
+        URLSession.shared.dataTask(with: URL) { (data, response, error) in
             
             if let error = error {
                 DispatchQueue.main.async {
@@ -40,21 +44,20 @@ class VKService {
         }.resume()
     }
     
-    
-    
-    func getFriends(count: Int = 5000, order: String = "", fields: [String] = [], completion: @escaping ((Result<[Profile], Error>) -> Void)) {
+    public func getFriends(count: Int = 5000, order: String = "", fields: [String] = [], completion: @escaping ((Result<[Profile], Error>) -> Void)) {
         
-        var params = ["access_token" : (authManager?.token)!,
-                       "v" : version,
-                       "count": String(count)]
+        var params = ["v" : version, "count": String(count)]
         
+        if let token = authManager?.token { params["access_token"] = token }
         if !order.isEmpty { params["order"] = order }
         if !fields.isEmpty { params["fields"] = fields.joined(separator: ",") }
         
-        var url = URLComponents(string: "https://api.vk.com/method/friends.get")
+        var url = URLComponents(string: Routing.Vk.friends)
         url?.queryItems = params.map({ URLQueryItem(name: $0.key, value: $0.value) })
         
-        URLSession.shared.dataTask(with: (url?.url)!) { (data, response, error) in
+        guard let URL = url?.url else { return }
+        
+        URLSession.shared.dataTask(with: URL) { (data, response, error) in
             
             if let error = error {
                 DispatchQueue.main.async {
@@ -73,6 +76,7 @@ class VKService {
         }.resume()
     }
     
+    // MARK: - Module functions
     private func dataDecoding <T: Decodable> (type: T.Type, data: Data?) -> T? {
         
         let decoder = JSONDecoder()

@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController?.present(viewController, animated: true)
     }
     
-    func presentFriendsViewController() {
+    public func presentFriendsViewController() {
         
         guard let friendsVC = UIStoryboard(name: "Friends", bundle: nil).instantiateInitialViewController() as? FriendsViewController else { return }
         

@@ -10,38 +10,33 @@ import UIKit
 
 class FriendsViewController: UITableViewController {
 
-    private let networkManager = VKService()
+    // MARK: - Properties
+    private let viewModel = FriendsViewModel()
     private var friends = [Profile]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateFriends()
-        userData()
+        bindViewModel()
+        viewModel.loadData()
     }
     
-    func userData() {
-        
-        networkManager.getMyProfile() { (result) in
+    // MARK: - Module functions
+    private func bindViewModel() {
+
+        viewModel.loadDataCompletion = { [weak self] result in
             
             switch result {
-            case .success(let profile):
-                self.title = profile.firstName + " " + profile.lastName
                 
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
-    
-    func updateFriends() {
-        
-        networkManager.getFriends(count: 5, order: "random", fields: ["sex"]) { (result) in
-            
-            switch result {
-            case .success(let friends):
-                self.friends = friends
-                self.tableView.reloadData()
+            case .success(let data):
+                if let profile = data.profile {
+                    self?.title = profile.firstName + " " + profile.lastName
+                }
+                
+                if let friends = data.friends {
+                    self?.friends = friends
+                    self?.tableView.reloadData()
+                }
                 
             case .failure(let error):
                 print(error.localizedDescription)

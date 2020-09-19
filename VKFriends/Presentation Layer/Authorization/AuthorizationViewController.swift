@@ -13,12 +13,6 @@ class AuthorizationViewController: UIViewController {
     // MARK: - Props
     private var authManager: AuthorizationService?
     
-    lazy var router: AuthorizationRouterInput? = {
-        let router = AuthorizationRouter()
-        router.viewController = self
-        return router
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
