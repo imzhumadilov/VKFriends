@@ -14,6 +14,9 @@ class FriendsViewModel {
     var loadDataCompletion: ((Result<(profile: Profile?, friends: [Profile]?), Error>) -> Void)?
     private let vkService = VKService()
     
+    var profile: Profile?
+    var friends: [Profile]?
+    
     // MARK: - Public functions
     public func loadData() {
         
@@ -21,12 +24,14 @@ class FriendsViewModel {
             
             switch result {
             case .success(let profile):
+                self.profile = profile
                 self.loadDataCompletion?(.success((profile, nil)))
                 
                 self.vkService.getFriends(count: 5, order: "random", fields: ["sex"]) { (result) in
                     
                     switch result {
                     case .success(let friends):
+                        self.friends = friends
                         self.loadDataCompletion?(.success((profile, friends)))
                         
                     case .failure(let error):
